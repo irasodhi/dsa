@@ -99,27 +99,28 @@
 
 
 
-#include <iostream>
-using namespace std;
-void equilibrium(int arr[],int size){
-   for(int i=0;i<size;i++){
-      int leftsum=0;
-      for(int j=0;j<i;j++){
-         leftsum+=arr[j];
+// #include <iostream>
+// using namespace std;
+// void equilibrium(int arr[],int size){
+//    for(int i=0;i<size;i++){
+//       int leftsum=0;
+//       for(int j=0;j<i;j++){
+//          leftsum+=arr[j];
 
-      }
-      int rightsum=0;
-      for(int j=i+1;j<size;j++){
-         rightsum+=arr[j];
+//       }
+//       int rightsum=0;
+//       for(int j=i+1;j<size;j++){
+//          rightsum+=arr[j];
 
-      }
-      if(leftsum==rightsum){
-         cout<<arr[i];
-      }
-   }
-}
+//       }
+//       if(leftsum==rightsum){
+//          cout<<arr[i];
+//       }
+//    }
+// }
 
-int main() {
-   int nums[]={1,3,5,2,2};
-   equilibrium(nums,5);
-}
+// int main() {
+//    int nums[]={1,3,5,2,2};
+//    equilibrium(nums,5);
+// }
+
