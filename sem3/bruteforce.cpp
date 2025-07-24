@@ -124,3 +124,30 @@
 //    equilibrium(nums,5);
 // }
 
+// #include <iostream>
+// using namespace std;
+
+// void printSubarraysSlidingWindow(int arr[], int n) {
+//     for (int w = 1; w <= n; w++) {
+//         for (int start = 0; start <= n - w; start++) {
+//             int end = start + w - 1;
+
+//             cout << "[ ";
+//             for (int i = start; i <= end; i++) {
+//                 cout << arr[i] << " ";
+//             }
+//             cout << "]" << endl;
+//         }
+//     }
+// }
+
+// int main() {
+//     int arr[] = {1, 2, 3, 4};
+//     int n = sizeof(arr) / sizeof(arr[0]);
+
+//     cout << "Subarrays using sliding window style:" << endl;
+//     printSubarraysSlidingWindow(arr, n);
+
+//     return 0;
+// 
+//}
