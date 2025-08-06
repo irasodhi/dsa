@@ -284,3 +284,44 @@
 //     }
 
 // }
+
+
+// #include <iostream>
+// #include <vector>
+// using namespace std;
+// int subarray(int k,vector<int>& num){
+//     int left=0;int minl=INT_MAX;int sum=0;
+//     for(int i=0;i<num.size();i++){
+//         sum+=num[i];
+ 
+//     while(sum>=k){
+//         minl=min(minl,i-left+1);
+//         sum-=num[left++];
+
+//     }
+// }
+// return minl==INT_MAX? 0:minl;
+
+// }
+// int main() {
+//     vector<int> nums = {2, 3, 1, 2, 4, 3};
+//     int k = 7;
+//     cout << subarray(k, nums); // Output: 2
+//     return 0;
+// }
+
+// #include <iostream>
+// #include <vector>
+// using namespace std;
+
+// int atmost(int k,vector<int> &num){
+//     int res=0;int left=0;
+//     for(int right=0;right<num.size();++right){
+//         if(num[right]%2==1)k--;
+//         while(k<0){
+//             if(num[left++]%2==1)k++;
+//         }
+//         res+=right-left+1;
+//     }
+//     return res;
+// }
