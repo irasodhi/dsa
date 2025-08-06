@@ -196,3 +196,91 @@
     
 // }
 
+
+
+// #include <iostream>
+// #include <vector>
+// #include<algorithm>
+// using namespace std;
+
+
+
+// bool findtriplet(vector <int>& arr,int k){
+// sort(arr.begin(),arr.end());
+// for(int i=0;i<arr.size()-2;i++){
+//     int left=i+1;
+//     int right=arr.size()-1;
+//     while(left<right){
+//         int sum=arr[i]+arr[left]+arr[right];
+//         if (sum==k)
+//         return true;
+//         else if(sum<k){
+//         left++;
+//         }
+//         else{
+//             right--;
+//         }
+//     }
+   
+// } return false;
+
+// }
+
+// int main() {
+
+
+
+   
+// }
+
+
+
+
+// #include <iostream>
+// #include <vector>
+// #include<algorithm>
+// using namespace std;
+
+// void mergesort(int m,vector<int>&arr1,int n,vector<int>&arr2){
+//     int i=m-1;
+//     int j=n-1;
+//     int k=m+n-1;
+//     while(i>=0 && j>=0){
+//         if(arr1[i]>arr2[j]){
+//             arr1[k]=arr1[i];
+//             i--;
+//         }
+//         else{
+//             arr1[k]=arr2[j];
+//             j--;
+//         }
+//         k--;
+//     }
+//         while(j>=0){
+//             arr1[k]=arr2[j];
+//             j--;
+//             k--;
+           
+           
+//         }
+//         k--;
+
+//     }
+// };
+
+
+// #include <iostream>
+// #include<vector>
+// using namespace std;
+
+
+// void duplicate(vector<int>& num){
+//     int i=0;
+//     for(int j=0;j<num.size();j++){
+//         if(num[j]!=num[i]){
+//             num[++i]=num[j];
+//         }
+//     return i+1;
+//     }
+
+// }
