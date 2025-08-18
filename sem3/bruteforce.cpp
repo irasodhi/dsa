@@ -325,3 +325,142 @@
 //     }
 //     return res;
 // }
+
+
+// #include <iostream>
+// #include <unordered_set>
+// #include <vector>
+// using namespace std;
+// int longest(string s){
+//     unordered_set<char>seen;
+//     int l=0;int r=0;int maxlenght=0;
+//     while(r<s.length()){
+//         if(!seen.count(s[r])){
+//             seen.insert(s[r++]);
+//             maxlenght=max(maxlenght,r-l);
+//         }
+//         else{
+//             seen.erase(s[l++]);
+//         }
+//     }
+//     return maxlenght; 
+// }
+
+// int main() {
+//     string s="abcba";
+//     cout<<longest(s);
+
+
+// }
+
+
+
+// #include <iostream>
+// #include <unordered_set>
+// #include <vector>
+// using namespace std;
+// int maxarea(vector <int>& height){
+//     int l=0;
+//     int r=height.size()-1;
+//     int maxa=0;
+//     while(l<r){
+//         maxa=max(maxa,min(height[l],height[r])*(r-l));
+//         if (height[l]<height[r]) l++;
+//         else r--;
+//     }
+// return maxa;
+
+// }
+
+
+
+
+// #include <iostream>
+// #include <vector>
+// using namespace std;
+
+// void selection(vector <int>& num){
+//     int n=num.size();
+//     for (int i=0;i<n-1;i++){
+//         int minindex=i;
+//         for(int j=i+1;j<n;j++){
+//             if(num[j]<num[minindex]){
+//                 minindex=j;
+//             }
+//         }
+//         swap(num[i],num[minindex]);
+
+//     }
+// }
+
+
+#include <iostream>
+#include <vector>
+using namespace std;
+
+// void selection(vector <int>& num){
+//     int n=num.size();
+//     for(int i=1;i<n;i++){
+//         int key=num[i];
+//         int j=i-1;
+//         while(j>=0 && num[j]>key){
+//             num[j+1]=num[j]
+//             j--;
+//         }
+//         arr[j+1]=key'
+
+//     }
+// }
+
+// void bubble(vector <int> &arr){
+//     int n=arr.size();
+//     for(int i=0;i<n-1;i++){
+//         bool swapped=false;
+//         for(int j=1;j<n-i-1;j++)
+//         if(arr[j]>arr[j+1]){
+//             swap(arr[j],arr[j+1]);
+//             swapped=true;
+//         }
+//     }
+// }
+
+
+#include <iostream>
+#include <vector>
+using namespace std;
+
+void merge(vector <int> &nums,int l,int r,int mid){
+    vector <int> temp;
+    int i=l;
+    int j=mid+1;
+    while(i<=mid && j<=r){
+        if(nums[i]<nums[j]){
+            temp.push_back(nums[i]);
+            i++;
+        }
+        else{
+            temp.push_back(nums[j])
+            j++
+        }
+    }
+    while(i<=mid){
+        temp.push_back(nums[i]);
+        i++;
+    }
+    while(j<=r){
+        temp.push_back(nums[j]);
+        j++;
+
+    }
+    for(int ind;ind<temp.size();ind++){
+        nums[ind+l]=temp[ind];
+    }
+}
+void mergesor( vector <int> &num,int st,int end){
+    if(st<end){
+        int mid=st+(end-st)/2;
+        mergesor(num,st,mid);
+        mergesor(num,mid+1,end);
+        merge(arr,st,mid,end)
+    }
+}
