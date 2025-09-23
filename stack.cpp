@@ -376,3 +376,120 @@
 //         cout << ans[i] << " ";
 //     }
 // }
+
+
+
+// #include <iostream>
+// #include <stack>
+
+// using namespace std;
+// class Stack{
+//     public:
+//     int *arr;
+//     int top;
+//     int size;
+//     Stack(int size){
+//         this->size=size;
+//         arr= new int[size];
+//         top=-1;
+
+
+//     }
+//     void push(int element){
+//         if(size-top>1){
+//             top++;
+//             arr[top]=element;
+//         }
+//         else{
+//             cout<<"Stack overflow";
+//         }
+//     }
+//     void pop(){
+//         if(top>=0){
+//             top--;
+//         }
+//         else{
+//             cout<<"Stack underflow";
+//         }
+//     }
+//     int peek(){
+//         if(top>=0){
+//             return arr[top];
+//         }
+//         else{
+//             cout<<"satck is empty";
+//         }
+//     }
+//     bool isempty(){
+//         if(top==-1){
+//             return true;
+//         }
+//         else{
+//             return false;
+//         }
+//     }
+// };
+
+// int main() {
+// Stack st(5);
+// st.push(22);
+// st.push(78);
+// cout<<st.peek();
+
+
+// }
+
+// #include <iostream>
+// #include <stack>
+// #include <string>
+// #include <cmath>
+// using namespace std;
+
+// bool isOperator(char c) {
+//     return (c == '+' || c == '-' || c == '*' || c == '/' || c == '^');
+// }
+
+// int evaluate(int a, int b, char op) {
+//     switch(op) {
+//         case '+': return a + b;
+//         case '-': return a - b;
+//         case '*': return a * b;
+//         case '/': return a / b;
+//         case '^': return pow(a, b);
+//     }
+//     return 0;
+// }
+
+// int prefixEvaluation(string expr) {
+//     stack<int> st;
+//     // traverse from right to left
+//     for (int i = expr.size()-1; i >= 0; i--) {
+//         char c = expr[i];
+        
+//         if (c == ' ') continue;  // skip spaces
+
+//         if (isdigit(c)) {
+//             st.push(c - '0');  // convert char to int
+//         }
+//         else if (isOperator(c)) {
+//             int op1 = st.top(); st.pop();
+//             int op2 = st.top(); st.pop();
+//             int res = evaluate(op1, op2, c);
+//             st.push(res);
+//         }
+//     }
+//     return st.top();
+// }
+
+// int main() {
+//     string expr = "-+9*23 8";  // equivalent to: (9 + (2*3)) - 8
+//     cout << "Result = " << prefixEvaluation(expr) << endl;
+//     return 0;
+// }
+
+
+
+
+
+
+

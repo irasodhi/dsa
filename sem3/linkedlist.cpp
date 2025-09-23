@@ -477,7 +477,7 @@ void insertatatil(Node* &tail,int d){
 
 }
 void insertatmiddle(Node* &head,int p,int d){
-    Node* temp=head;
+    Node* temp=head;  
     int count=1;
     while(count<p-1){
         temp=temp->next;
@@ -512,4 +512,4 @@ int main() {
    print(head);
    insertathead(head,12);
    print(head);
-}
+}  
