@@ -186,3 +186,139 @@
 //    dl.print();
 
 // }
+
+
+// void isertatbeg(){
+//     Node* newnode=new Node(data);
+//     if(!head){
+//         head=newnode;
+//     }
+//     newNode->next=head;
+//     head=head->next;
+//     head=newnode;
+// }
+// void delteatbeg(){
+//     Node* temp=head;
+//     head=head->next;
+//     delete temp;
+// }
+
+
+
+#include <iostream>
+using namespace std;
+
+class Node {
+public:
+    int data;
+    Node* next;
+    Node(int val) : data(val), next(nullptr) {}
+};
+
+class CircularLinkedList {
+private:
+    Node* head;
+
+public:
+    CircularLinkedList() : head(nullptr) {}
+
+ 
+    void insertAtBeginning(int val) {
+      Node* newnode=new Node(val);
+      if(head==nullptr){
+        head=newnode;
+        head->next=head;
+        return;
+      }
+      Node* temp=head;
+      while(temp->next!=head){
+        temp=temp->next;
+
+      }
+      newnode->next=head;
+      temp->next=newnode;
+      head=newnode;
+
+
+     
+
+
+
+
+
+    }
+
+  
+    void deleteAtBeginning() {
+  
+        if (head==nullptr){
+        return;
+        }
+        if(head->next==head){
+            delete head;
+            head=nullptr;
+            return;
+        }
+        Node* last=head;
+        while(last->next!=head){
+            last=last->next;
+
+        }
+        Node *temp=head;
+        head=head->next;
+        last->next=head;
+        delete temp;
+    
+
+
+
+
+       
+    }
+
+ 
+    void printList() {
+        if (!head) {
+            cout << "List is empty\n";
+            return;
+        }
+        Node* temp = head;
+        do {
+            cout << temp->data << " -> ";
+            temp = temp->next;
+        } while (temp != head);
+        cout << "(head)\n";
+    }
+
+    // Destructor for cleanup
+    ~CircularLinkedList() {
+        if (!head) return;
+        Node* current = head->next;
+        while (current != head) {
+            Node* temp = current;
+            current = current->next;
+            delete temp;
+        }
+        delete head;
+        head = nullptr;
+    }
+};
+
+int main() {
+    CircularLinkedList list;
+
+    // Insert elements
+    list.insertAtBeginning(30); // 30
+    list.insertAtBeginning(20); // 20 -> 30
+    list.insertAtBeginning(10); // 10 -> 20 -> 30
+    cout << "Circular Linked List after insertions:\n";
+    list.printList(); // 10 -> 20 -> 30 -> (head)
+
+    // Delete first node
+    list.deleteAtBeginning();
+    cout << "After deleting first node:\n";
+    list.printList(); // 20 -> 30 -> (head)
+
+    return 0;
+}
+
