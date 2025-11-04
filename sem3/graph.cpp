@@ -71,7 +71,14 @@ public:
         adjList[v].push_back(u);
         return;
     }
-
+        void removeedge(int u,int v){
+            for(auto vertex=adjList[u].begin();vertex!=adjList[u].end();++vertex){
+                if(*vertex==v){
+                    adjList[u].erase(vertex);
+                    break;
+                }
+            }
+        }
     void display(){
         for(int i=0;i<V;i++){
             cout << i << "->";
@@ -94,9 +101,11 @@ int main() {
     g.createEdge(1,4);
     g.createEdge(2,3);
     g.createEdge(3,4);
-
+    g.removeedge(0,1);
+    g.removeedge(1,3);
     
     g.display();
 
     return 0;
 }
+
