@@ -49,68 +49,105 @@
 
 
 
-#include <iostream>
-#include <vector>
-using namespace std;
+// #include <iostream>
+// #include <vector>
+// using namespace std;
 
-class Node{
-    public:
-    int data;
-    Node *left;
-    Node* right;
-    Node(int v){
-        data=v;
-        left=right=NULL;
-    }
-};
-Node*insert(Node * root,int val){
-    if(!root){return new Node(val);}
-    if(val<root->data){
-        root->left=insert(root->left,val);
-    }
-    else{
-        root->right=insert(root->right,val);
-    }
-    return root;
-}
-Node *buildbst(vector<int>arr){
-    Node *root=NULL;
-    for(int val:arr){
-        root=insert(root,val);
-        }
-        return root;
-}
-void inorder(Node* root){
-    if(!root){
-        return;
-    }
-    inorder(root->left);
-    cout<<root->data<<" ";
-    inorder(root->right);
-}
-bool search(Node *root,int k){
-    if(root==NULL){
-        return false;
-    }
-    if(root->data==k){
-        return true;
-    }
-    if(root->data>k){
-        return search(root->left,k);
-    }
-    else{
-        return search(root->right,k);
-    }
+// class Node{
+//     public:
+//     int data;
+//     Node *left;
+//     Node* right;
+//     Node(int v){
+//         data=v;
+//         left=right=NULL;
+//     }
+// };
+// Node*insert(Node * root,int val){
+//     if(!root){return new Node(val);}
+//     if(val<root->data){
+//         root->left=insert(root->left,val);
+//     }
+//     else{
+//         root->right=insert(root->right,val);
+//     }
+//     return root;
+// }
+// Node *buildbst(vector<int>arr){
+//     Node *root=NULL;
+//     for(int val:arr){
+//         root=insert(root,val);
+//         }
+//         return root;
+// }
+// void inorder(Node* root){
+//     if(!root){
+//         return;
+//     }
+//     inorder(root->left);
+//     cout<<root->data<<" ";
+//     inorder(root->right);
+// }
+// bool search(Node *root,int k){
+//     if(root==NULL){
+//         return false;
+//     }
+//     if(root->data==k){
+//         return true;
+//     }
+//     if(root->data>k){
+//         return search(root->left,k);
+//     }
+//     else{
+//         return search(root->right,k);
+//     }
   
 
-}
-int main() {
-    vector<int> arr = {5, 3, 7, 2, 4, 6, 8};
-    Node* root = buildbst(arr);
+// }
+// int main() {
+//     vector<int> arr = {5, 3, 7, 2, 4, 6, 8};
+//     Node* root = buildbst(arr);
 
-    cout << "Inorder traversal of BST: ";
-    inorder(root);
-    cout << endl;
-    cout<<search(root,8);
-    return 0;
-}
+//     cout << "Inorder traversal of BST: ";
+//     inorder(root);
+//     cout << endl;
+//     cout<<search(root,8);
+//     return 0;
+// }
+// /**
+//  * Definition for a binary tree node.
+//  * struct TreeNode {
+//  *     int val;
+//  *     TreeNode *left;
+//  *     TreeNode *right;
+//  *     TreeNode() : val(0), left(nullptr), right(nullptr) {}
+//  *     TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
+//  *     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
+//  * };
+//  */
+// class Solution {
+// public:
+//     TreeNode *prev=NULL;
+//     TreeNode *first=NULL;
+//     TreeNode * second=NULL;
+//     void inorder(TreeNode* root){
+//        if(root==NULL)return;
+//        inorder(root->left);
+//        if(prev!=NULL&&prev->val>root->val){
+//         if(first==NULL){
+//             first=prev;
+//         }
+//         second=root;
+      
+//        }
+//        prev=root;
+//        inorder(root->right);
+        
+//     }
+//     void recoverTree(TreeNode* root) {
+//       inorder(root);
+//       int temp=first->val;
+//       first->val=second->val;
+//       second->val=temp;
+//     }
+// };
