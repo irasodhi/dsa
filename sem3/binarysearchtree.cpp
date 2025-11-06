@@ -101,6 +101,7 @@ bool search(Node *root,int k){
     else{
         return search(root->right,k);
     }
+  
 
 }
 int main() {
@@ -110,6 +111,6 @@ int main() {
     cout << "Inorder traversal of BST: ";
     inorder(root);
     cout << endl;
-
+    cout<<search(root,8);
     return 0;
 }
