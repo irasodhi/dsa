@@ -151,3 +151,121 @@
 //       second->val=temp;
 //     }
 // };
+#include<iostream>
+#include<list>
+#include<vector>
+#include<queue>
+using namespace std;
+
+class Graph{
+    int V;
+    list<int>*l;
+
+    public:
+    Graph(int V){
+        this->V=V;
+        l=new list<int>[V];
+    }
+
+    void createEdge(int u ,int v){
+        l[u].push_back(v);
+        l[v].push_back(u);
+    }
+  void bfs(){
+    queue<int>Q;
+    vector<bool>vist(V,false);
+
+
+    Q.push(0);
+    vist[0]=true;
+
+    while(Q.size()>0){
+        int u=Q.front();
+        Q.pop();
+cout<<u;
+        for(int v : l[u]){
+            if(!vist[v]){
+                vist[v]=true;
+                Q.push(v);
+            }
+        }
+    }
+    cout<<endl;
+  }
+  void dfsHelper(int u,vector<bool>&vis){
+    cout<<u<<" ";
+    vis[u]=true;
+
+    for(int v:l[u]){
+        if(!vis[v]){
+            dfsHelper(v,vis);
+        }
+    }
+  }
+
+  void dfs(){
+    int u=0;
+    vector<bool>vis(V,false);
+
+    dfsHelper(u,vis);
+    cout<<endl;
+  }
+
+  bool helperCheck(int v,int par,vector<bool>&vis){
+    vis[v]=true;
+    list<int>neighbour=l[v];
+
+    for(int V : neighbour){
+        if(!vis[V]){
+            if(helperCheck(V,v,vis)){
+                return true;
+            }
+            else if(V!=par){
+                return true;
+            }
+        }
+        
+    }
+    return false;  
+  }
+
+  bool check(){
+    vector<bool>vis(V,false);
+
+    for(int i=0;i<V;i++){
+        if(!vis[i]){
+            if(helperCheck(i,-1,vis)){
+                return true;
+            }
+        }
+    }
+    return false;
+  }
+    void print(){
+        for(int i=0;i<V;i++){
+            cout<<"vertex"<<":"<<i<<"->";
+            for (int x : l[i])
+                cout << x << " ";
+            cout << endl;
+        }
+        
+    }
+};
+
+
+
+int main() {
+    Graph a(6);
+    a.createEdge(0, 1);
+    a.createEdge(0, 2);
+    a.createEdge(1, 3);
+    a.createEdge(1, 4);
+    a.createEdge(2, 5);
+    cout<<"bfs:";
+    a.bfs();
+    cout<<"dfs:";
+    a.dfs();
+
+
+    
+}
