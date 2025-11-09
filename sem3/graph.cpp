@@ -187,6 +187,20 @@ class Graph{
 
         cout<<endl;
     }
+    void dfshelper(int u,vector<bool>&vis){
+      cout<<u<<" ";
+      vis[u]=true;
+      for(int v:l[u]){
+        if(!vis[v]){
+            dfshelper(v,vis);
+        }
+      }
+    }
+    void dfs(){
+        int src=0;
+        vector<bool>vis(V,false);
+        dfshelper(src,vis);
+    }
 };
 
 int main() {
@@ -194,8 +208,8 @@ int main() {
    g.addedge(0,1);
    g.addedge(1,2);
    g.addedge(1,3);
-   g.addedge(2,3);
    g.addedge(2,4);
    g.bfs();
+   g.dfs();
    return 0;
 }
