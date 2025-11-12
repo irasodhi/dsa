@@ -195,7 +195,7 @@
 //             dfshelper(v,vis);
 //         }
 //       }
-//     }
+//     }               
 //     void dfs(){
 //         int src=0;
 //         vector<bool>vis(V,false);
@@ -232,7 +232,7 @@
 // int main() {
 //    Graph g(5);
 //    g.addedge(0,1);
-//    g.addedge(1,2);
+//    g.addedge(0,2);
 //    g.addedge(1,3);
 //    g.addedge(2,4);
 //    g.bfs();
@@ -244,3 +244,5 @@
 //    }
 //    return 0;
 // }
+
+
