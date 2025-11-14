@@ -171,40 +171,61 @@
 // }
 
 
-#include <iostream>
-#include <vector>
-using namespace std;
+// #include <iostream>
+// #include <vector>
+// using namespace std;
 
-int main() {
-    int r, c;
-    cin >> r >> c;
+// int main() {
+//     int r, c;
+//     cin >> r >> c;
 
-    vector<vector<int>> matrix(r, vector<int>(c));
+//     vector<vector<int>> matrix(r, vector<int>(c));
 
-    for (int i = 0; i < r; i++) {
-        for (int j = 0; j < c; j++) {
-            cin >> matrix[i][j];
-        }
-    }
-    int sumc=0;
-       for (int i = 0; i < r; i++) {
+//     for (int i = 0; i < r; i++) {
+//         for (int j = 0; j < c; j++) {
+//             cin >> matrix[i][j];
+//         }
+//     }
+//     int sumc=0;
+//        for (int i = 0; i < r; i++) {
         
-        int sumr=0;
-        for (int j = 0; j < c; j++) {
-            sumr+=matrix[i][j];
+//         int sumr=0;
+//         for (int j = 0; j < c; j++) {
+//             sumr+=matrix[i][j];
          
          
-        }
-           cout<<sumr<<endl;
-    }
-    for (int j=0;j<c;j++){
-        int sumc=0;
-        for(int i=0;i<r;i++){
-            sumc+=matrix[i][j];
+//         }
+//            cout<<sumr<<endl;
+//     }
+//     for (int j=0;j<c;j++){
+//         int sumc=0;
+//         for(int i=0;i<r;i++){
+//             sumc+=matrix[i][j];
             
-        }
-        cout<<sumc<<endl;
-    }
+//         }
+//         cout<<sumc<<endl;
+//     }
   
 
+// }
+
+#include <iostream>
+#include<list>
+#include<vector>
+
+using namespace std;
+class hashtable{
+    public:
+    int size;
+    vector<list<pair<int,int>>>table;
+    int hashfunction(int key){
+        return key%size;
+    }
+    hashtable(int size=10){
+        this->size=size;
+        table.resize(size);
+    }
+};
+int main(){
+hashtable h(10);
 }
