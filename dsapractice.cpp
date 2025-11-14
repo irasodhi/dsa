@@ -208,24 +208,51 @@
   
 
 // }
-
 #include <iostream>
-#include<list>
-#include<vector>
+#include <vector>
 
 using namespace std;
-class hashtable{
-    public:
+
+class hashTable {
     int size;
-    vector<list<pair<int,int>>>table;
-    int hashfunction(int key){
-        return key%size;
-    }
-    hashtable(int size=10){
-        this->size=size;
+    vector<vector<int>> table;
+
+public:
+    hashTable(int n) {
+        size = n;
         table.resize(size);
     }
+
+    int calculateindex(int key) {
+        return key % size;   
+    }
+
+    void insert(int key) {
+        int hashindex = calculateindex(key);
+        table[hashindex].push_back(key);
+    }
+
+    void display() {
+        for (int i = 0; i < size; i++) {    
+            cout << i << " -> ";
+            for (int key : table[i]) {
+                cout << key << " ";
+            }
+            cout << endl;
+        }
+    }
 };
-int main(){
-hashtable h(10);
+
+int main() {
+
+    hashTable h(10);
+
+  
+    for (int i = 0; i < 10; i++) {
+        h.insert(i);
+    }
+
+    h.display();
+
+    return 0;
 }
