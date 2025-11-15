@@ -256,3 +256,69 @@ int main() {
 
     return 0;
 }
+class Solution {
+public:
+    int numberOfSubstrings(string s) {
+int n = s.length();
+        
+        const int B = 200;
+         
+        vector<int> zero_pos;
+        for (int i = 0; i < n; ++i) {
+            if (s[i] == '0') {
+                zero_pos.push_back(i);
+            }
+        }
+        
+        int m = zero_pos.size();  
+        int total_count = 0;
+        
+       
+        for (int i = 0; i < n; ++i) {
+            
+             
+            auto it = lower_bound(zero_pos.begin(), zero_pos.end(), i);
+            
+            int z_start_idx = distance(zero_pos.begin(), it);
+            
+            
+            
+            int first_zero_at = n;
+            if (z_start_idx < m) {
+                first_zero_at = zero_pos[z_start_idx];
+            } 
+            int num_all_one_subs = first_zero_at - i;
+            total_count += num_all_one_subs;
+    
+            for (int k = 1; k <= B; ++k) {
+                 
+                int z_end_idx = z_start_idx + k - 1;
+                 
+                if (z_end_idx >= m) {
+                    break;
+                }
+                
+             
+                int start_j = zero_pos[z_end_idx];
+                
+               
+                int end_j = n - 1;
+                if (z_end_idx + 1 < m) {
+                    end_j = zero_pos[z_end_idx + 1] - 1;
+                }
+                
+             
+                int required_j = k * k + k + i - 1;
+            
+                int count_start = max(start_j, required_j);
+                int count_end = end_j;
+                
+                if (count_start <= count_end) {
+                    total_count += (count_end - count_start + 1);
+                }
+            }
+        }
+        
+        return total_count;
+    }
+};
