@@ -779,34 +779,397 @@
 //     print(head);
 
 // }
-#include <iostream>
-using namespace std;
-class Node{
-    public:
-    int d;
-    Node* next;
-    Node(int v){
-        d=v;
-        next=NULL;
-    }
-};
-Node * findmidle(Node* head){
-    Node* s=head;
-    Node* f=head;
-    Node* prev=NULL;
-    while(f!=NULL&&f->next!=NULL){
-        f=f->next->next;
-        prev=s;
-        s=s->next;
-    }
-   prev->next=s->next;
-    delete s;
-}
-int main() {
+// #include <iostream>
+// using namespace std;
+// class Node{
+//     public:
+//     int d;
+//     Node* next;
+//     Node(int v){
+//         d=v;
+//         next=NULL;
+//     }
+// };
+// Node * findmidle(Node* head){
+//     Node* s=head;
+//     Node* f=head;
+//     Node* prev=NULL;
+//     while(f!=NULL&&f->next!=NULL){
+//         f=f->next->next;
+//         prev=s;
+//         s=s->next;
+//     }
+//    prev->next=s->next;
+//     delete s;
+// }
+// int main() {
     
-    Node* head = new Node(1);
-    head->next = new Node(2);
-    head->next->next = new Node(3);
-    Node* mid=findmidle(head);
-    cout<<mid->data;
+//     Node* head = new Node(1);
+//     head->next = new Node(2);
+//     head->next->next = new Node(3);
+//     Node* mid=findmidle(head);
+//     cout<<mid->data;
+// }
+
+
+// #include <iostream>
+// using namespace std;
+// class Stack{
+//     public:
+//     int arr[100];
+//     int top;
+//     public:
+//     Stack(){
+//         top=-1;
+//     }
+//     void push(int x){
+//         if(top==99){
+//             cout<<"stack overflow";
+//         }
+//         arr[++top]=x;
+//     }
+//     void pop(){
+//         if(top==-1){
+//             cout<<"stack underflow";
+//             return;
+//         }
+//         top--;
+//     }
+//     int peek(){
+//         return arr[top];
+//     }
+//     bool empty(){
+//         return top==-1;
+//     }
+    
+//     void display() {
+//         for(int i = top; i >= 0; i--)
+//             cout << arr[i] << " ";
+//         cout << endl;
+//     }
+
+
+// }
+
+// int main() {
+//       Stack st;
+//     st.push(10);
+//     st.push(20);
+//     st.push(30);
+//     st.display();
+//     st.pop();
+//     st.display();
+// }
+// #include <iostream>
+// using namespace std;
+// class Node{
+//     public:
+//     int data;
+//     Node* next=NULL;
+//     Node(int val){
+//         data=val;
+//         next=nullptr;
+//     }
+// };
+// void insert(Node*&head,int val){
+//     Node* newnode=new Node(val);
+//     if(head==nullptr){
+//         head=newnode;
+//         return;
+//     }
+//     Node *temp=head;
+//     while(temp->next!=nullptr){
+//         temp=temp->next;
+//     }
+//     temp->next=newnode;
+// }
+// void makecircular(Node*head){
+//     if(head==nullptr)return;
+//     Node* temp=head;
+//      while(temp->next!=nullptr){
+//         temp=temp->next;
+//     }
+//     temp->next=head;
+
+// }
+// bool iscircular(Node* head){
+//     Node *s=head;
+//     Node* f=head;
+//     while(f!=nullptr&&f->next!=nullptr){
+//         f=f->next->next;
+//         s=s->next;
+//     }
+//     if(s==f){return true;}
+//     return false;
+
+// }
+// int main() {
+//     Node* head=nullptr;
+//     insert(head,10);
+//     insert(head,20);
+//     insert(head,30);
+//     makecircular(head);
+//     if(iscircular(head)){
+//         cout<<"listiscircular";
+//     }
+//     else{
+//         cout<<"list is not circular";
+//     }
+
+// }
+
+
+// #include <iostream>
+// using namespace std;
+// void bubblesort(int arr[],int n){
+//     bool swapped;
+//     for(int i=0;i<n-1;i++){
+//         swapped=false;
+//         for(int j=0;j<n-i-1;j++){
+//             if(arr[j]>arr[j+1]){
+//                 swap(arr[j],arr[j+1]);
+//                 swapped=true;
+//             }
+//         }
+//     }
+//     if(!swapped)break;
+
+
+
+
+    
+// }
+
+// int main() {
+//     cout << "Hello, World!" << endl;
+//     return 0;
+// }
+
+
+// #include <iostream>
+// using namespace std;
+
+// void prevsmall(int arr[],int n){
+//     for(int i=0;i<n;i++){
+//         int prev=-1;
+//         for(int j=i-1;j>=0;j--){
+//             if(arr[j]<arr[i]){
+//                 prev=arr[j];
+//                 break;
+//             }
+//         }
+//         cout<<prev<<" ";
+//     }
+// }
+// int main() {
+//     cout << "Hello, World!" << endl;
+//     return 0;
+// }
+
+// #include <iostream>
+// using namespace std;
+
+
+// int main() {
+//     int r;
+//     int c;
+//     cin>>r>>c;
+//     int mat[r][c];
+//     for(int i=0;i<r;i++){
+//         for(int j=0;j<c;j++){
+//             cin>>mat[i][j];
+//         }
+//     }
+//      for(int i=0;i<c;i++){
+//         for(int j=0;j<r;j++){
+//             cout<<mat[j][i]<<" ";
+//         }
+//         cout<<endl;
+//     }
+// }
+
+
+// #include <iostream>
+// using namespace std;
+
+// int main() {
+//     int m;
+//     cin>>m;
+//     int arr[m][m];
+//     for(int i=0;i<n;i++){
+//         for(int j=0;j<i;j++ )
+//     }
+
+// }
+
+// #include <iostream>
+// using namespace std;
+
+// int main() {
+//     int n;
+//     int m;
+//     int arr[m][n];
+//     for(int i=0;i<m;i++){
+//         for(int j=0;j<n;j++){
+//             cin>>arr[i][j];
+//             cout<<255-arr[i][j];
+//         }
+//         cout<<endl;
+//     }
+// }
+
+// #include <iostream>
+// #include<stack>
+// using namespace std;
+// void demand(int demand[],int n){
+//     vector<int>ans(n,-1);
+//     stack<int>st;
+//     for(int i=n;i>0;i--){
+//         while(!st.empty()&&demand[i]>=st.top())st.pop();
+//         ans[i]=st.empty()?-1:st.top();
+//         st.push(demand[i]);
+//     }
+//     for(int i=0;i<n;i++){
+//         cout<<ans[i];
+//         if(i<n-1)cout<<" ";
+//     }
+// }
+
+
+// int main() {
+//     cout << "Hello, World!" << endl;
+//     return 0;
+// }
+// #include <iostream>
+// using namespace std;
+
+// int main() {
+//     int r,c;
+//     cin>>r>>c;
+//     vector<vector<int>>seats(r,vector<int>(c));
+//     for(int i=0;i<r;i++){
+//         for(int j=0;j<c;j++){
+//             cin>>seats[i][j];
+//         }
+//     }
+//     int k;
+//     cin>>k;
+//     bool found=false;
+    
+//     for(int i=0;i<r;i++){
+//         int count=0;
+//         for(int j=0;j<c;j++){
+//             if(seats[i][j]==0){
+//                 count++;
+//             }
+//             else{
+//                 count=0;
+//             }
+//         }
+//         if(count==k){
+//             cout<<"available"<<i+1;
+//             cout<<"starting"<<j-k+2;
+//             found=true;
+//             break;
+//         }
+//         if(found)break;
+
+//     }
+
+// // }
+
+// Node* deletegreater( Node*head,int x){
+   
+   
+//     while(head!=NULL&&head->data>X){
+//         Node*temp=head;
+//         head=head->next;
+//         delete temp;
+//     }
+//      if(head==NULL)return NULL;
+//      Node* curr=head;
+//     while(curr->next!=nullptr){
+//         if(curr->next->data>X){
+//             Node*temp=curr->next;
+//             curr->next=curr->next->next;
+//             delete temp;
+//         }
+//         else{
+//             curr=curr->next;
+//         }
+//     }
+//     return head;
+// }
+// #include <iostream>
+
+// using namespace std;
+
+// int main() {
+//    vector<int> freq(26,0);
+//    for(char c:str){
+//     freq[c]++;
+//    }
+//    for(int i=0;i<26;i++){
+//     if(freq[i]>0){
+//         cout<<char('a'+i)<<freq[i]<<" ";
+//     }
+//    }
+// }
+// #include <iostream>
+// #include<string>
+// using namespace std;
+// stringcisercipher(string mess,int k){
+//     string res="";
+//     for(char ch:mess){
+//     if(ch>='A' && ch<='Z'){
+//         char shif=(ch='A'+k)%26+'A';
+//         res+=shif;
+//     }
+//     else if(ch>='a'&&c<='z'){
+//         char shift=(ch='a'+k)%26+'A';
+//         res+=shift
+//     }
+//     else{
+//         res+=ch;
+//     }
+// }
+// }
+
+
+//count the leaders
+
+// int count=0;
+// int mini=INT_MIN;
+// for(int i=n-1;i>=0;i--){
+//     if(arr[i]>mini){
+//         mini=arr[i];
+//         count++;
+//     }
+//     return count;
+// }
+
+Node* findlast(Node* head, int n) {
+    if (head == NULL || n <= 0) return head;
+
+    Node* fast = head;
+    Node* slow = head;
+
+     
+    int count = 0;
+    while (count < n && fast != NULL) {
+        fast = fast->next;
+        count++;
+    } 
+    if (fast == NULL) { 
+        while (slow->next != NULL) slow = slow->next;
+        return slow;   
+    }
+
+     
+    while (fast != NULL) {
+        fast = fast->next;
+        slow = slow->next;
+    }
+
+    return slow;
 }
