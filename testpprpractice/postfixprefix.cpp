@@ -17,3 +17,26 @@ int evalpostfix(CQStack *stack,string exp){
     }
     return stack->pop();
 }
+int evalpostfix(CQStack *stack,string exp){
+   for(char c:exp){
+    if(isdigit(c)){
+        stack->push(c-'0');
+    }
+    else{
+        int val2=st.top();
+        st.pop();
+        int val2=st.top();
+        st.pop();
+        switch(c){
+            case '+':
+        }
+    }
+   }
+}
+
+
+
+
+
+
+

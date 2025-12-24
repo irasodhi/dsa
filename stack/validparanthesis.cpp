@@ -178,3 +178,21 @@ Node* curry=head;
 while(currx&&currx->data!=x)currx=currx->next;
 while(curry&&curry->data!=y)curry=curry->next;
 if(!currx||!curry)return;
+
+
+
+
+
+i=0;j=0;k=0;
+while(i<=n&&j<=n){
+    if(a[i]<b[j]){
+    merge[k++]=a[i++];
+    }
+    else{
+        merge[k++]=b[j++];
+    }
+}
+
+Node*o=head;
+Node*e=head;
+Node*evh=e;

@@ -1173,3 +1173,60 @@ Node* findlast(Node* head, int n) {
 
     return slow;
 }
+
+
+
+
+
+(char*s){
+    int i=0;
+    
+}while(s[i]!='\0'){
+    push(s[i]);
+    i++;
+}
+i=0;
+while(!isEmpty()){
+    s[i++]=pop();
+}
+return s;
+
+
+
+
+prime(int n){
+    int num=1;
+    int count=0;
+    while(count<n){
+    
+    num++;
+    isprime=true;
+    if(num<2){
+        isprime=false;
+    }
+    for(int i=2;i*i<=n;i++){
+        if(num%i==0){return false;
+        break;
+    }
+}
+if(isprime)count++
+
+    }
+return num;
+
+}
+
+
+
+if(x||!y)return;
+int minamt(int price[],int n,int k){
+    sort(price,price+n);
+    i=0j=n-1s=0
+    while(i<=j){
+        s+=price[i++];
+        j-=k;
+    }
+}
+
+
+
